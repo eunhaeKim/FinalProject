@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">FinalProject</string>
+    <string name="action_home">홈</string>
     <string name="action_reg">카페인 섭취 등록</string>
     <string name="action_list">일별 카페인 섭취량</string>
 </resources>

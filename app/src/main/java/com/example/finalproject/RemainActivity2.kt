@@ -6,14 +6,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 
-class MainActivity : AppCompatActivity() {
+class RemainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_remain2)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_remain, menu)
         return true
     }
 
@@ -21,15 +21,20 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item?.itemId){
+            R.id.action_home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             R.id.action_reg ->{
-                val intent = Intent(this, //파일이름::class.java)
-                        startActivity(intent)
-                        return true
+                val intent = Intent(this, ::class.java)
+                startActivity(intent)
+                return true
             }
             R.id.action_list -> {
-                val intent = Intent(this, //파일이름::class.java)
-                        startActivity(intent)
-                        return true
+                val intent = Intent(this, ::class.java)
+                startActivity(intent)
+                return true
             }
         }
 
