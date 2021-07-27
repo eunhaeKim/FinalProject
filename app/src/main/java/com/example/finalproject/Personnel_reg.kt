@@ -2,6 +2,7 @@ package com.example.finalproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 
 class Personnel_reg : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,8 +10,8 @@ class Personnel_reg : AppCompatActivity() {
         setContentView(R.layout.activity_personnel_reg)
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_reg, menu)
         return true
-    }*/
+    }
 }
