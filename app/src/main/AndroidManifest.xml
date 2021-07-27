@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-        <activity android:name=".Personnel_reg"></activity>
+        <activity android:name=".PersonnelInfo"></activity>
+        <activity android:name=".PersonnelList" />
+        <activity android:name=".PersonnelReg" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
