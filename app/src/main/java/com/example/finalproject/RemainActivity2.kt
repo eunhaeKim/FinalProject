@@ -17,7 +17,6 @@ class RemainActivity2 : AppCompatActivity() {
         return true
     }
 
-    /*
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item?.itemId){
@@ -27,17 +26,17 @@ class RemainActivity2 : AppCompatActivity() {
                 return true
             }
             R.id.action_reg ->{
-                val intent = Intent(this, ::class.java)
+                val intent = Intent(this, PersonnelReg::class.java)
                 startActivity(intent)
                 return true
             }
             R.id.action_list -> {
-                val intent = Intent(this, ::class.java)
+                val intent = Intent(this, PersonnelList::class.java)
                 startActivity(intent)
                 return true
             }
         }
 
         return super.onOptionsItemSelected(item)
-    }*/
+    }
 }
