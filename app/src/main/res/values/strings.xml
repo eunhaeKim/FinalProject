@@ -3,4 +3,5 @@
     <string name="action_home">홈</string>
     <string name="action_reg">카페인 섭취량 등록</string>
     <string name="action_list">일별 카페인 섭취량</string>
+    <string name="btn_to_remain">무엇을 더 마실 수 있을까?</string>
 </resources>
