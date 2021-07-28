@@ -35,7 +35,7 @@ class PersonnelInfo : AppCompatActivity() {
         sqlitedb=dbManager.readableDatabase
 
         var cursor: Cursor
-        cursor=sqlitedb.rawQuery("SELECT * FROM personnel WHERE name = '" +str_date+"';",null)
+        cursor=sqlitedb.rawQuery("SELECT * FROM personnel WHERE date = '" +str_date+"';",null)
 
         if(cursor.moveToNext()){
             caffeine=cursor.getInt((cursor.getColumnIndex("caffeine")))
