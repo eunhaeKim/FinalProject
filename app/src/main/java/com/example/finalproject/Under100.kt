@@ -9,7 +9,7 @@ import android.widget.Button
 
 class Under100 : AppCompatActivity() {
 
-    lateinit var btnUnder100 : Button
+    lateinit var btnUnder100 : Button //100mg 미만 페이지 버튼
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +17,14 @@ class Under100 : AppCompatActivity() {
 
         btnUnder100 = findViewById(R.id.buttonUnder100)
 
+        //버튼을 눌렀을 때 100mg 미만으로 카페인을 섭취할 수 있는 음료
         btnUnder100.setOnClickListener {
             var intent = Intent(this, RemainActivity2::class.java)
             startActivity(intent)
         }
     }
 
+    //메뉴(홈, 등록, 일별)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_result, menu)
         return true
