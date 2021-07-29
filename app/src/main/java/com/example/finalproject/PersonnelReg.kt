@@ -57,7 +57,7 @@ class PersonnelReg : AppCompatActivity() {
             }
 
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', " + str_caffeine + "')")
+            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_Drink +"',"+ str_caffeine + ", '"+str_ageType+"')")
             sqlitedb.close()
 
             val intent = Intent(this, PersonnelInfo::class.java)
