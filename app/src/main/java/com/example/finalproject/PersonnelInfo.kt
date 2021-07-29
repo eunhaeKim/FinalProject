@@ -59,46 +59,4 @@ class PersonnelInfo : AppCompatActivity() {
         tvCaffeine.text=""+caffeine+"\n"
 
     }
-
-   /* override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_personnel_info, menu)
-        return true
-    }*/
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.id.action_home -> {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-
-            /*R.id.action_list -> {
-                val intent = Intent(this, personnelList::class.java)
-                startActivity(intent)
-                return true
-            }
-
-            R.id.action_reg -> {
-                val intent = Intent(this, personnelReg::class.java)
-                startActivity(intent)
-                return true
-            }
-
-            R.id.action_remove -> {
-                dbManager= DBManager(this,"personnelDB",null,1)
-                sqlitedb=dbManager.readableDatabase
-
-                sqlitedb.execSQL("DELETE FROM personnel WHERE name='"+str_name+"';")
-                sqlitedb.close()
-                dbManager.close()
-
-                val intent = Intent(this, personnelList::class.java)
-                startActivity(intent)
-                return true
-            }*/
-        }
-
-        return super.onOptionsItemSelected(item)
     }
-}
