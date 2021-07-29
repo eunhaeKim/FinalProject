@@ -15,9 +15,13 @@ class PersonnelInfo : AppCompatActivity() {
     lateinit var sqlitedb: SQLiteDatabase
 
     lateinit var tvDate: TextView
+    lateinit var tvType:TextView
+    lateinit var tvDrink:TextView
     lateinit var tvCaffeine: TextView
 
     lateinit var str_date:String
+    lateinit var str_ageType:String
+    var drink:Int=0
     var caffeine:Int=0
 
 
@@ -26,6 +30,8 @@ class PersonnelInfo : AppCompatActivity() {
         setContentView(R.layout.activity_personnel_info)
 
         tvDate=findViewById(R.id.edtDate)
+        tvType=findViewById(R.id.type)
+        tvDrink=findViewById(R.id.edtDrink)
         tvCaffeine=findViewById(R.id.edtCaffeine)
 
         val intent=intent
@@ -38,6 +44,8 @@ class PersonnelInfo : AppCompatActivity() {
         cursor=sqlitedb.rawQuery("SELECT * FROM personnel WHERE date = '" +str_date+"';",null)
 
         if(cursor.moveToNext()){
+            str_ageType=cursor.getString((cursor.getColumnIndex("type"))).toString()
+            drink=cursor.getInt((cursor.getColumnIndex("drink")))
             caffeine=cursor.getInt((cursor.getColumnIndex("caffeine")))
         }
 
@@ -46,6 +54,8 @@ class PersonnelInfo : AppCompatActivity() {
         dbManager.close()
 
         tvDate.text=str_date
+        tvType.text=str_ageType
+        tvDrink.text=""+drink
         tvCaffeine.text=""+caffeine+"\n"
 
     }
