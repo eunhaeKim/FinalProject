@@ -46,18 +46,18 @@ class PersonnelReg : AppCompatActivity() {
             var str_caffeine: String = edtCaffeine.text.toString()
 
             var str_ageType: String = ""
-            if(ageType.checkedRadioButtonId == R.id.adult) {
+            if (ageType.checkedRadioButtonId == R.id.adult) {
                 str_ageType = adult.text.toString()
             }
-            if(ageType.checkedRadioButtonId == R.id.pregnant) {
+            if (ageType.checkedRadioButtonId == R.id.pregnant) {
                 str_ageType = pregnant.text.toString()
             }
-            if(ageType.checkedRadioButtonId == R.id.child) {
+            if (ageType.checkedRadioButtonId == R.id.child) {
                 str_ageType = child.text.toString()
             }
 
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_Drink +"',"+ str_caffeine + ", '"+str_ageType+"')")
+            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_Drink + "'," + str_caffeine + ", '" + str_ageType + "')")
             sqlitedb.close()
 
             val intent = Intent(this, PersonnelInfo::class.java)
@@ -65,28 +65,43 @@ class PersonnelReg : AppCompatActivity() {
             startActivity(intent)
 
         }
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_reg, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.id.action_home -> {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-
-            R.id.action_list -> {
-                val intent = Intent(this, PersonnelList::class.java)
-                startActivity(intent)
-                return true
+        val intent1 = Intent(this, Overdose::class.java)
+        val intent2 = Intent(this, More300::class.java)
+        val intent3 = Intent(this, More200::class.java)
+        val intent4 = Intent(this, More100::class.java)
+        val intent5 = Intent(this, Under100::class.java)
+        btnRegister.setOnClickListener {
+            var ca = edtCaffeine.text.toString().toInt()
+            when {
+                ca >= 400 -> startActivity(intent5)
+                ca >= 300 -> startActivity(intent4)
+                ca >= 200 -> startActivity(intent3)
+                ca >= 100 -> startActivity(intent2)
+                else -> startActivity(intent1)
             }
         }
-
-        return super.onOptionsItemSelected(item)
     }
-}
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.menu_reg, menu)
+            return true
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            when (item?.itemId) {
+                R.id.action_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    return true
+                }
+
+                R.id.action_list -> {
+                    val intent = Intent(this, PersonnelList::class.java)
+                    startActivity(intent)
+                    return true
+                }
+            }
+
+            return super.onOptionsItemSelected(item)
+        }
+    }
