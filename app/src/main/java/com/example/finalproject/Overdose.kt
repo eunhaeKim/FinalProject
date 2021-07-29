@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Overdose: AppCompatActivity() {
 
-    lateinit var btnoverdose : Button
+    lateinit var btnoverdose : Button //과섭취 페이지 버튼
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +17,14 @@ class Overdose: AppCompatActivity() {
 
         btnoverdose = findViewById(R.id.buttonOverdose)
 
+        //버튼을 눌렀을 때 그만 마시라는 페이지
         btnoverdose.setOnClickListener {
-            var intent = Intent(this, RemainActivity3::class.java)
+            var intent = Intent(this, RemainActivity1::class.java)
             startActivity(intent)
         }
     }
 
+    //메뉴(홈, 등록, 일별)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_result, menu)
         return true
