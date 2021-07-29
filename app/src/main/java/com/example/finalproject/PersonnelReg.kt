@@ -74,11 +74,11 @@ class PersonnelReg : AppCompatActivity() {
         btnRegister.setOnClickListener {
             var ca = edtCaffeine.text.toString().toInt()
             when {
-                ca >= 400 -> startActivity(intent5)
+                ca >= 400 -> startActivity(intent1)
                 ca >= 300 -> startActivity(intent4)
                 ca >= 200 -> startActivity(intent3)
                 ca >= 100 -> startActivity(intent2)
-                else -> startActivity(intent1)
+                else -> startActivity(intent5)
             }
         }
     }
