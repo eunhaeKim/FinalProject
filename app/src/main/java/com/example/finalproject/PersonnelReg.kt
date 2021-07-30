@@ -24,6 +24,7 @@ class PersonnelReg : AppCompatActivity() {
     lateinit var adult : RadioButton
     lateinit var pregnant : RadioButton
     lateinit var child : RadioButton
+    var totalCa = 400 //성인 일일 적정 카페인 섭취량
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +72,7 @@ class PersonnelReg : AppCompatActivity() {
         val intent3 = Intent(this, More200::class.java)
         val intent4 = Intent(this, More100::class.java)
         val intent5 = Intent(this, Under100::class.java)
+
         btnRegister.setOnClickListener {
 
             var str_date: String = edtDate.text.toString()
@@ -97,11 +99,12 @@ class PersonnelReg : AppCompatActivity() {
             startActivity(intent)
 
             var ca = edtCaffeine.text.toString().toInt()
+            totalCa -= ca
             when {
-                ca >= 400 -> startActivity(intent1)
-                ca >= 300 -> startActivity(intent4)
-                ca >= 200 -> startActivity(intent3)
-                ca >= 100 -> startActivity(intent2)
+                totalCa >= 400 -> startActivity(intent1)
+                totalCa >= 300 -> startActivity(intent4)
+                totalCa >= 200 -> startActivity(intent3)
+                totalCa >= 100 -> startActivity(intent2)
                 else -> startActivity(intent5)
             }
         }
