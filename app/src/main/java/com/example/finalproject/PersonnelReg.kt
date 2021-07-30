@@ -63,7 +63,6 @@ class PersonnelReg : AppCompatActivity() {
             val intent = Intent(this, PersonnelInfo::class.java)
             intent.putExtra("intent_date", str_date)
             startActivity(intent)
-
         }
 
         val intent1 = Intent(this, Overdose::class.java)
@@ -82,26 +81,26 @@ class PersonnelReg : AppCompatActivity() {
             }
         }
     }
-        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            menuInflater.inflate(R.menu.menu_reg, menu)
-            return true
-        }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_reg, menu)
+        return true
+    }
 
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            when (item?.itemId) {
-                R.id.action_home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    return true
-                }
-
-                R.id.action_list -> {
-                    val intent = Intent(this, PersonnelList::class.java)
-                    startActivity(intent)
-                    return true
-                }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item?.itemId) {
+            R.id.action_home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
             }
 
-            return super.onOptionsItemSelected(item)
+            R.id.action_list -> {
+                val intent = Intent(this, PersonnelList::class.java)
+                startActivity(intent)
+                return true
+            }
         }
+
+        return super.onOptionsItemSelected(item)
     }
+}

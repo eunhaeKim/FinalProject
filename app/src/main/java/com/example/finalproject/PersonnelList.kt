@@ -57,7 +57,7 @@ class PersonnelList : AppCompatActivity() {
             }
 
             layout.addView(layout_item)
-            num++;
+            num++
         }
 
         cursor.close()
