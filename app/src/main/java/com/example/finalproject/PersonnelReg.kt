@@ -40,31 +40,6 @@ class PersonnelReg : AppCompatActivity() {
 
         dbManager = DBManager(this, "personnelDB", null, 1)
 
-        /*btnRegister.setOnClickListener() {
-            var str_date: String = edtDate.text.toString()
-            var str_Drink: String = edtDrink.text.toString()
-            var str_caffeine: String = edtCaffeine.text.toString()
-
-            var str_ageType: String = ""
-            if (ageType.checkedRadioButtonId == R.id.adult) {
-                str_ageType = adult.text.toString()
-            }
-            if (ageType.checkedRadioButtonId == R.id.pregnant) {
-                str_ageType = pregnant.text.toString()
-            }
-            if (ageType.checkedRadioButtonId == R.id.child) {
-                str_ageType = child.text.toString()
-            }
-
-            sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_Drink + "'," + str_caffeine + ", '" + str_ageType + "')")
-            sqlitedb.close()
-
-            val intent = Intent(this, PersonnelInfo::class.java)
-            intent.putExtra("intent_date", str_date)
-            startActivity(intent)
-        }*/
-
         val intent1 = Intent(this, Overdose::class.java)
         val intent2 = Intent(this, More300::class.java)
         val intent3 = Intent(this, More200::class.java)
@@ -88,7 +63,7 @@ class PersonnelReg : AppCompatActivity() {
             }
 
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_Drink + "'," + str_caffeine + ", '" + str_ageType + "')")
+            sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_ageType + "'," + str_Drink + ", '" + str_caffeine + "')")
             sqlitedb.close()
 
             val intent = Intent(this, PersonnelInfo::class.java)
