@@ -25,7 +25,9 @@ class PersonnelReg : AppCompatActivity() {
     lateinit var adult : RadioButton
     lateinit var pregnant : RadioButton
     lateinit var child : RadioButton
-    var totalCa = 400 //성인 일일 적정 카페인 섭취량
+    var totalCaA = 400 //성인 일일 적정 카페인 섭취량
+    var totalCaP = 300 //임산부 일일 적정 카페인 섭취량
+    var totalCaC = 200 //어린이 일일 적정 카페인 섭취량
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,14 +77,37 @@ class PersonnelReg : AppCompatActivity() {
             //startActivity(intent)
 
             var ca = edtCaffeine.text.toString().toInt()
-            totalCa -= ca
-            when {
-                totalCa >= 300 -> startActivity(intent2)
-                totalCa >= 200 -> startActivity(intent3)
-                totalCa >= 100 -> startActivity(intent4)
-                totalCa >= 0 -> startActivity(intent5)
-                else -> startActivity(intent1)
+//성인으로 체크했을 때 적정 카페인량은 400mg
+            if (ageType.checkedRadioButtonId == R.id.adult) {
+                totalCaA -= ca
+                when {
+                    totalCaA >= 300 -> startActivity(intent2)
+                    totalCaA >= 200 -> startActivity(intent3)
+                    totalCaA >= 100 -> startActivity(intent4)
+                    totalCaA >= 0 -> startActivity(intent5)
+                    else -> startActivity(intent1)
+                }
             }
+//임산부로 체크했을 때 적정 카페인량은 300mg
+            if (ageType.checkedRadioButtonId == R.id.pregnant) {
+                totalCaP -= ca
+                when {
+                    totalCaP >= 200 -> startActivity(intent3)
+                    totalCaP >= 100 -> startActivity(intent4)
+                    totalCaP >= 0 -> startActivity(intent5)
+                    else -> startActivity(intent1)
+                }
+            }
+//어린이로 체크했을 때 적정 카페인량은 200mg
+            if (ageType.checkedRadioButtonId == R.id.child) {
+                totalCaC -= ca
+                when {
+                    totalCaC >= 100 -> startActivity(intent4)
+                    totalCaC >= 0 -> startActivity(intent5)
+                    else -> startActivity(intent1)
+                }
+            }
+
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
