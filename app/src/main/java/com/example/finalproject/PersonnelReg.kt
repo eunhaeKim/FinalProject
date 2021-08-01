@@ -12,10 +12,11 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 
 class PersonnelReg : AppCompatActivity() {
-
+//DB 관련 변수 생성
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
+//정보 등록할 때 필요한 변수 생성
     lateinit var btnRegister: Button
     lateinit var edtDate: EditText
     lateinit var edtDrink : EditText
@@ -29,7 +30,7 @@ class PersonnelReg : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personnel_reg)
-
+//위젯과 변수를 연결
         btnRegister = findViewById(R.id.btnRegister)
         edtDate = findViewById(R.id.edtDate)
         edtDrink = findViewById(R.id.edtDrink)
@@ -39,6 +40,7 @@ class PersonnelReg : AppCompatActivity() {
         pregnant = findViewById(R.id.pregnant)
         child = findViewById(R.id.child)
 
+//DBManager 객체를 받아온다 (DB의 이름은 personnelDB로 지정)
         dbManager = DBManager(this, "personnelDB", null, 1)
 
         val intent1 = Intent(this, Overdose::class.java)
@@ -62,8 +64,9 @@ class PersonnelReg : AppCompatActivity() {
             if (ageType.checkedRadioButtonId == R.id.child) {
                 str_ageType = child.text.toString()
             }
-
+//읽고 쓰기가 가능하도록 지정
             sqlitedb = dbManager.writableDatabase
+//날짜, 음료량, 카페인 함량 정보를 DB에 삽입
             sqlitedb.execSQL("INSERT INTO personnel VALUES('" + str_date + "', '" + str_ageType + "'," + str_Drink + ", '" + str_caffeine + "')")
             sqlitedb.close()
 
