@@ -15,6 +15,8 @@
         android:layout_marginEnd="16dp"
         android:text="오늘은 카페인을 과섭취 했어요"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +37,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/button_shape"
+        android:drawableLeft="@drawable/button_icon"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="@string/btn_to_remain"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageOverdose" />
