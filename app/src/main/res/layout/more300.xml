@@ -14,7 +14,10 @@
         android:layout_marginTop="130dp"
         android:layout_marginEnd="16dp"
         android:text="오늘 남은 카페인 섭취량 \n--->300~399mg"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,8 +38,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/button_shape"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="@string/btn_to_remain"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageMore300" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMore300"
+        tools:drawableLeft="@drawable/button_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

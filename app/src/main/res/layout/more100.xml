@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +13,10 @@
         android:layout_marginTop="130dp"
         android:layout_marginEnd="16dp"
         android:text="오늘 남은 카페인 섭취량 \n--->100~199mg"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,19 +25,26 @@
         android:id="@+id/imageMore100"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:tint="@color/brown_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_sentiment_satisfied_24" />
+        app:srcCompat="@drawable/ic_baseline_sentiment_satisfied_24"
+        app:tint="@color/brown_dark" />
 
     <Button
         android:id="@+id/buttonMore100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/button_shape"
+        android:drawableLeft="@drawable/button_icon"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="@string/btn_to_remain"
+        android:textAllCaps="false"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageMore100" />
