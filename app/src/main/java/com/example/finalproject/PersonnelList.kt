@@ -84,7 +84,6 @@ class PersonnelList : AppCompatActivity() {
 
 //while문이 반복할 때마다 하나씩 증가하도록
             num++
-            tvdate.marginBottom
 
         }
 
