@@ -17,6 +17,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.marginBottom
 
 class PersonnelList : AppCompatActivity() {
 //DB 관련 변수 생성
@@ -62,14 +63,14 @@ class PersonnelList : AppCompatActivity() {
 //날짜에 해당하는 TextView 구현
             var tvdate: TextView = TextView(this)
             tvdate.text=str_date
-            tvdate.textSize=35f
+            tvdate.textSize=25f
             tvdate.setBackgroundColor(Color.parseColor("#CD9665"))
             layout_item.addView(tvdate) //레이아웃에 추가
 
 //카페인 함량에 해당하는 TextView 구현
             var tvcaffeine: TextView = TextView(this)
             tvcaffeine.text=caffeine.toString()
-            tvdate.textSize=20f
+            tvcaffeine.textSize=20f
             layout_item.addView(tvcaffeine) //레이아웃에 추가
 
 //레이아웃이 클릭되었을 때 PersonnelInfo로 보냄
@@ -83,6 +84,8 @@ class PersonnelList : AppCompatActivity() {
 
 //while문이 반복할 때마다 하나씩 증가하도록
             num++
+            tvdate.marginBottom
+
         }
 
         cursor.close()
