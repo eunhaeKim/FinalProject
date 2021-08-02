@@ -107,7 +107,6 @@ class PersonnelReg : AppCompatActivity() {
                     else -> startActivity(intent1)
                 }
             }
-
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -131,5 +130,12 @@ class PersonnelReg : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    // 카페인 총량 초기화 함수
+    fun Initializing(){
+        totalCaA = 400 //성인 일일 적정 카페인 섭취량
+        totalCaP = 300 //임산부 일일 적정 카페인 섭취량
+        totalCaC = 200 //어린이 일일 적정 카페인 섭취량
     }
 }

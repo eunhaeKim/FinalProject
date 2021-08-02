@@ -9,19 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-        <activity android:name=".PersonnelInfo"></activity>
-        <activity android:name=".PersonnelList" />
-        <activity android:name=".PersonnelReg" />
-        <activity android:name=".Under100"/>
         <activity android:name=".More100"/>
+        <activity android:name=".Overdose"/>
         <activity android:name=".More200"/>
         <activity android:name=".More300"/>
-        <activity android:name=".Overdose"/>
+        <activity android:name=".Under100"/>
         <activity android:name=".RemainActivity1"/>
         <activity android:name=".RemainActivity2"/>
         <activity android:name=".RemainActivity3"/>
         <activity android:name=".RemainActivity4"/>
         <activity android:name=".RemainActivity5"/>
+        <activity android:name=".PersonnelInfo"/>
+        <activity android:name=".PersonnelList"/>
+        <activity android:name=".PersonnelReg"
+            android:launchMode="singleTask"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
