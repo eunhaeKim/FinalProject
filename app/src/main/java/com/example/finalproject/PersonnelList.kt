@@ -108,12 +108,12 @@ class PersonnelList : AppCompatActivity() {
         val view = inflater.inflate(R.layout.reset_popup, null)
         // 텍스트뷰 속성 변경
         val textView: TextView = view.findViewById(R.id.textView)
-        textView.text = "정말 데이터를 초기화 하시겠습니까?"
+        textView.text = " 정말 데이터를 초기화 하시겠습니까?"
         textView.textSize = 15f
 
         //팝업 생성
         val alertDialog = AlertDialog.Builder(this)
-                //.setTitle("초기화")
+                //.setTitle("Delete Data")
                 .create()
 
         // '예' 버튼 동작(DB 초기화)
@@ -154,12 +154,12 @@ class PersonnelList : AppCompatActivity() {
         val view = inflater.inflate(R.layout.reset_popup, null)
         // 텍스트뷰 속성 변경
         val textView: TextView = view.findViewById(R.id.textView)
-        textView.text = "남은 카페인 총량을 초기화 하시겠습니까?"
+        textView.text = " 남은 카페인 총량을 초기화 하시겠습니까?"
         textView.textSize = 15f
 
         //팝업 생성
         val alertDialog = AlertDialog.Builder(this)
-                //.setTitle("초기화")
+                //.setTitle("Reset")
                 .create()
 
         // '예' 버튼 동작(DB 초기화)
@@ -169,7 +169,9 @@ class PersonnelList : AppCompatActivity() {
             reg.Initializing() // 카페인 총량 변수 초기화
             alertDialog.dismiss()
 
-            Toast.makeText(applicationContext, "초기화 됨", Toast.LENGTH_SHORT).show()
+            var toast = Toast.makeText(applicationContext, "초기화 됨", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.BOTTOM, Gravity.CENTER,200) //토스트 메시지 위치 변경
+            toast.show()
         }
 
         // '아니오' 버튼 동작
