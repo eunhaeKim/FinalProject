@@ -62,13 +62,14 @@ class PersonnelList : AppCompatActivity() {
 //날짜에 해당하는 TextView 구현
             var tvdate: TextView = TextView(this)
             tvdate.text=str_date
-            tvdate.textSize=30f
-            tvdate.setBackgroundColor(Color.LTGRAY)
+            tvdate.textSize=35f
+            tvdate.setBackgroundColor(Color.parseColor("#CD9665"))
             layout_item.addView(tvdate) //레이아웃에 추가
 
 //카페인 함량에 해당하는 TextView 구현
             var tvcaffeine: TextView = TextView(this)
             tvcaffeine.text=caffeine.toString()
+            tvdate.textSize=20f
             layout_item.addView(tvcaffeine) //레이아웃에 추가
 
 //레이아웃이 클릭되었을 때 PersonnelInfo로 보냄
