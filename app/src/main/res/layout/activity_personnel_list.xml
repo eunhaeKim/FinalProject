@@ -33,24 +33,45 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btn_dataReset"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="데이터 초기화" />
+            android:text=" 데이터 초기화"
+            android:textStyle="bold"
+            android:textColor="@color/brown_dark"
+            android:background="@drawable/button_shape"
+            android:drawableLeft="@drawable/ic_baseline_coffee_24"/>
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="0.1" />
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/btn_cafTotalReset"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="카페인 잔여량 초기화" />
+            android:text=" 카페인 잔여량 초기화"
+            android:textStyle="bold"
+            android:textColor="@color/brown_dark"
+            android:background="@drawable/button_shape"
+            android:drawableLeft="@drawable/ic_baseline_coffee_24"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
