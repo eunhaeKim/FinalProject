@@ -17,7 +17,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.marginBottom
 
 class PersonnelList : AppCompatActivity() {
 //DB 관련 변수 생성
@@ -25,7 +24,6 @@ class PersonnelList : AppCompatActivity() {
     lateinit var sqlitedb: SQLiteDatabase
     lateinit var layout: LinearLayout
     lateinit var btnDataReset : Button
-    lateinit var btnCafTotalReset : Button
     lateinit var myHelper: myDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +40,6 @@ class PersonnelList : AppCompatActivity() {
         layout=findViewById(R.id.personnel)
 
         btnDataReset = findViewById(R.id.btn_dataReset)
-        btnCafTotalReset = findViewById(R.id.btn_cafTotalReset)
         myHelper = myDBHelper(this)
 
 //DB로 부터 값을 가져온다
@@ -96,10 +93,6 @@ class PersonnelList : AppCompatActivity() {
         btnDataReset.setOnClickListener {
             showSettingPopup1()
         }
-        // '카페인 총량 초기화'버튼 클릭 시 팝업 창 띄우기
-        btnCafTotalReset.setOnClickListener {
-            showSettingPopup2()
-        }
     }
 
     private fun showSettingPopup1(){
@@ -113,7 +106,6 @@ class PersonnelList : AppCompatActivity() {
 
         //팝업 생성
         val alertDialog = AlertDialog.Builder(this)
-                //.setTitle("Delete Data")
                 .create()
 
         // '예' 버튼 동작(DB 초기화)
@@ -147,44 +139,6 @@ class PersonnelList : AppCompatActivity() {
         alertDialog.show()
     }
 
-    //추가한 부분
-    private fun showSettingPopup2(){
-        // 팝업 레이아웃 객체화
-        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = inflater.inflate(R.layout.reset_popup, null)
-        // 텍스트뷰 속성 변경
-        val textView: TextView = view.findViewById(R.id.textView)
-        textView.text = " 남은 카페인 총량을 초기화 하시겠습니까?"
-        textView.textSize = 15f
-
-        //팝업 생성
-        val alertDialog = AlertDialog.Builder(this)
-                //.setTitle("Reset")
-                .create()
-
-        // '예' 버튼 동작(DB 초기화)
-        val btnYes = view.findViewById<Button>(R.id.btnYes)
-        btnYes.setOnClickListener {
-            var reg = PersonnelReg() //객체 생성
-            reg.Initializing() // 카페인 총량 변수 초기화
-            alertDialog.dismiss()
-
-            var toast = Toast.makeText(applicationContext, "초기화 됨", Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.BOTTOM, Gravity.CENTER,200) //토스트 메시지 위치 변경
-            toast.show()
-        }
-
-        // '아니오' 버튼 동작
-        val btnNo = view.findViewById<Button>(R.id.btnNo)
-        btnNo.setOnClickListener {
-            alertDialog.dismiss()
-        }
-
-        alertDialog.setView(view)
-        alertDialog.show()
-    }
-
-    //추가한 부분
     // DB 생성, 삭제하는 함수
     inner class myDBHelper(context: Context) : SQLiteOpenHelper(context, "personnelDB", null, 1) {
         override fun onCreate(db: SQLiteDatabase?) {

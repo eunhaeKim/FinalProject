@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">K-affein</string>
+    <string name="app_name">K-affeine</string>
     <string name="action_home">홈</string>
     <string name="action_reg">카페인 섭취량 등록</string>
     <string name="action_list">일별 카페인 섭취량</string>
